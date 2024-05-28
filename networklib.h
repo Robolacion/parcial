@@ -13,5 +13,5 @@ struct Reg1ster{
 struct Reg1ster *Get_network(FILE *Data,int *final_size);
 void Show_IDs(struct Reg1ster *Data,int lenght);
 int Show_devices(struct Reg1ster data);
-struct Reg1ster get_register(uint16_t ID);
+struct Reg1ster get_register(struct Reg1ster *List,uint16_t ID,int Lenght);
 struct Reg1ster *resize(struct Reg1ster *vector,int old_size,int new_size);

@@ -18,7 +18,7 @@ int main(int argc, char const *argv[])
     }
     Network=Get_network(Network_structure,Registry_size);
     printf("tamaño vector %d",Registry_size);
-    Show_IDs(Network);
-
+    Show_IDs(Network,Registry_size[0]);
+    scanf("&d",&Registry_size[0]);
     return 0;
 }
