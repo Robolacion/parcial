@@ -1,0 +1,58 @@
+ID:1
+Device tipe:CPU
+ Upper level device ID:None 
+Lower device count:1
+
+ ----------------------- 
+ID:2
+Device tipe:CPU
+ Upper level device ID:1
+Lower device count:2
+
+ ----------------------- 
+ID:3
+Device tipe:
+ Upper level device ID:2
+Lower device count:0
+
+ ----------------------- 
+ID:4
+Device tipe:
+ Upper level device ID:2
+Lower device count:3
+
+ ----------------------- 
+ID:5
+Device tipe:
+ Upper level device ID:4
+Lower device count:0
+
+ ----------------------- 
+ID:6
+Device tipe:
+ Upper level device ID:4
+Lower device count:2
+
+ ----------------------- 
+ID:7
+Device tipe:CPU
+ Upper level device ID:4
+Lower device count:1
+
+ ----------------------- 
+ID:8
+Device tipe:
+ Upper level device ID:6
+Lower device count:0
+
+ ----------------------- 
+ID:9
+Device tipe:
+ Upper level device ID:6
+Lower device count:0
+
+ ----------------------- 
+
+Lower device count:0
+
+ ----------------------- 
