@@ -1,8 +1,6 @@
 #include "networklib2.h"
 /**
- * @brief La funcion debe leer el archivo y generar el vector de estructuras
- * 
- * por algún motivo la lectura el dato antes del for no funciona y crashea
+ * @brief La funcion debe lee el archivo y genera el vector de estructuras de tipo Reg1stry
  * @param Data puntero de archivo
  * @param final_size tamaño del vector, recuerde generar un vector de un elemento para almacenar el largo del vector dado que no se me ocurrio otra forma de devolver un 2do dato
  * @return struct Reg1ster* 
@@ -50,10 +48,10 @@ struct Reg1ster *Get_network(FILE *Data,int *final_size)
     return Network_structure;
 }
 /**
- * @brief muestra el vector
+ * @brief muestra el vector, no muestra las id de los dispositivos del nivel inferior
  * 
- * @param Data 
- * @param lenght 
+ * @param Data puntero del vector de Reg1stros
+ * @param lenght numero de elementos del vector Reg1stros
  */
 void Show_IDs(struct Reg1ster *Data,int lenght)
 {
@@ -93,9 +91,8 @@ void Show_IDs(struct Reg1ster *Data,int lenght)
 /**
  * @brief muestra cuantos dispositivos de cada tipo hay en la red
  * 
- * @param data puntero vector register
- * @param data_size largo del vector anterior
- * @return int 
+ * @param Data puntero vector register
+ * @param data_size largo del vector
  */
 void count_devices(struct Reg1ster *Data,int data_size)
 {
@@ -136,7 +133,7 @@ void count_devices(struct Reg1ster *Data,int data_size)
      
 }    
 /**
- * @brief compara ID y devuelve el elemento correspondiente
+ * @brief compara ID y devuelve el elemento correspondiente a dicha ID
  * @param List vector de estructura Reg1ster
  * @param ID ID del sipositivo que se busca
  * @param Lenght Numero de elementos del vector
@@ -158,7 +155,14 @@ void count_devices(struct Reg1ster *Data,int data_size)
 
     return result;
 }
-
+/**
+ * @brief Aumenta el tamaño de un vector de estructuras de tipo reg1stry
+ * 
+ * @param vector puntero del vector de reg1stros
+ * @param old_size tamaño actual del vector 
+ * @param new_size tamaño nuevo del vector
+ * @return struct Reg1ster* 
+ */
 struct Reg1ster *resize(struct Reg1ster *vector,int old_size,int new_size)
 {
     struct Reg1ster *v;
@@ -171,6 +175,14 @@ struct Reg1ster *resize(struct Reg1ster *vector,int old_size,int new_size)
     delete[]vector;
     return v;
 }
+/**
+ * @brief Aumenta el tamaño de un vector de tipo unsigned int 16
+ * 
+ * @param vector puntero del vector
+ * @param old_size tamaño actual del vector
+ * @param new_size tamaño nuevo del vector
+ * @return uint16_t* 
+ */
 uint16_t *int_resize(uint16_t *vector,int old_size,int new_size)
 {
      
@@ -184,6 +196,13 @@ uint16_t *int_resize(uint16_t *vector,int old_size,int new_size)
     return v;
 }
 
+/**
+ * @brief 
+ * 
+ * @param out Puntero asociado al archivo que se desea escribir
+ * @param Data Puntero del vector de estructuras de tipo Reg1stry
+ * @param lenght Numero de elementos del vector de tipo Reg1stry
+ */
 void print_network(FILE *out,struct Reg1ster *Data,int lenght){
      uint8_t i;
     printf("\n ----------------------- \n");
