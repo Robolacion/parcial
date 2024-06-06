@@ -7,12 +7,11 @@ int main(int argc, char const *argv[])
     uint16_t registry_size;
     Network_structure=fopen("C:\\Users\\alear\\OneDrive\\Escritorio\\Parcial Info II\\Recuperatorio\\network_structure.dat","r");
     Reg1ster *Network, Target_Register;
-    char Command='n' ;
     uint16_t Input;
     Network=Get_network(Network_structure,Registry_size);
     fclose(Network_structure);
     registry_size=Registry_size[0];
-    //printf("%u",registry_size);
+   
  
         printf("Introduzca el ID de su equipo\n");
         scanf("%u",&Input);
@@ -20,7 +19,7 @@ int main(int argc, char const *argv[])
         printf("ID:%u",Target_Register.ID);
         while (Target_Register.Upper_level_device_ID != 1023)
         {               
-            printf(" --> ID:%u",Target_Register.Upper_level_device_ID);
+            printf(" <-- ID:%u",Target_Register.Upper_level_device_ID);
             Target_Register=get_register(Network,Target_Register.Upper_level_device_ID,registry_size);     
         }
        

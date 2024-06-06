@@ -31,18 +31,18 @@ struct Reg1ster *Get_network(FILE *Data,int *final_size)
         Network_structure[count].Upper_level_device_ID=(Network_structure[count].Upper_level_device_ID<<3)>>6;
 
         Network_structure[count].List_of_devices=new uint16_t [Network_structure[count].Lower_device_count];
-        printf("antes del for");
+      //  printf("antes del for");
         for (aux_cont = 0; aux_cont < Network_structure[count].Lower_device_count; aux_cont++)
         {
             fread(&Network_structure[count].List_of_devices[aux_cont],sizeof(uint16_t),1,Data);
                Network_structure[count].List_of_devices[aux_cont]=(Network_structure[count].List_of_devices[aux_cont]>>6);
-            printf("-%u",aux_cont);   
+         //   printf("-%u",aux_cont);   
         }
 
         Network_structure=resize(Network_structure,Network_structure_size,Network_structure_size+1);
         Network_structure_size=Network_structure_size+1;
         count=count+1;
-        printf("%d",count);
+      //  printf("%d",count);
     }
     *final_size=count-1;
     return Network_structure;
